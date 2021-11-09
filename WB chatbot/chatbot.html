@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WriteBox</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+<!-- ChatBot -->
+<link rel="stylesheet" type="text/css" href="css/jquery.convform.css">
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.convform.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+</head>
+<body>
+    <!-- ChatBot -->
+<div class="chat_icon">
+	<i class="fa fa-comments" aria-hidden="true"></i>
+</div>
+
+<div class="chat_box">
+	<div class="my-conv-form-wrapper">
+		<form action="" method="POST" class="hidden">
+      
+      <!-- <input type="text" name="greet" data-conv-question="Hello! myself Chatbot <br> Please Define your Research Area?">
+
+      <input type="text" name="res_area_desc" data-conv-question="Please Describe about your research topic"> -->
+
+      <select data-conv-question="What is your current research status?" name="res_status">
+        <option value="3a">Research proposal submitted</option>
+        <option value="3b">Literature Review done</option>
+        <option value="3c">Yet to start</option>
+        <option value="3d">Research method done</option>
+        <option value="3e">Others</option>        
+      </select>
+
+      <!-- <div data-conv-fork="category">
+        <div data-conv-case="WebDevelopment">
+          <input type="text" name="domainName" data-conv-question="Please, tell me your domain name">    
+        </div>
+        <div data-conv-case="DigitalMarketing" data-conv-fork="first-question2">
+          <input type="text" name="companyName" data-conv-question="Please, enter your company name"> 
+        </div>
+      </div> -->
+
+
+
+      <div data-conv-fork="res_status">
+        <div data-conv-case="3c" data-conv-fork="4">
+          <select data-conv-question="Which services are you looking for?" name="services">
+            <option value="4a">Research proposal preparation</option>
+            <option value="4b">Research proposal, and paper work</option>
+            <option value="4c">Research paper mentorship</option>
+            <option value="4d">Others</option>       
+          </select>   
+        </div>
+        <div data-conv-case="3a" data-conv-fork="5a">
+          <select data-conv-question="Which services are you looking for?" name="3a_services">
+            <option value="5aa">Revising of research proposal</option>
+            <option value="5ab">Research paper mentorship</option>
+            <option value="5ac">Revised the Research paper?</option>
+            <option value="5ad">Others</option>       
+          </select>
+        </div>  
+        <div data-conv-case="3b" data-conv-fork="5b">
+            <select data-conv-question="Which services are you looking for?" name="3b_services">
+              <option value="5ba">Revising of research proposal</option>
+              <option value="5bb">Research paper mentorship</option>
+              <option value="5bc">Revised the Research paper?</option>
+              <option value="5bd">Others</option>       
+            </select>
+        </div>  
+            <div data-conv-case="3d" data-conv-fork="5d">
+              <select data-conv-question="Which services are you looking for?" name="3d_services">
+                <option value="5da">Revising of research proposal</option>
+                <option value="5db">Research paper mentorship</option>
+                <option value="5dc">Revised the Research paper?</option>
+                <option value="5dd">Others</option>       
+              </select>
+        </div>
+      </div>
+
+      <div data-conv-fork="services">
+        <div data-conv-case="4a">
+          <input type="text" name="4a_a" data-conv-question="Please brief your proposal requirements?">  
+        </div>
+        <div data-conv-case="4b">
+          <input type="text" name="4b_b" data-conv-question="Please brief your proposal requirements?">  
+        </div>
+        <div data-conv-case="4c">
+          <input type="text" name="4c_c" data-conv-question="Please brief your Research proposal?">  
+        </div>
+      </div>
+
+
+      <div data-conv-fork="3a_services">
+        <div data-conv-case="5aa" >
+          <input type="text" name="5aa_a" data-conv-question="Please brief your Requirements? ">  
+        </div>
+        <div data-conv-case="5ab" >
+          <input type="text" name="5ab_b" data-conv-question="Please brief your Requirements? ">  
+        </div>
+        <div data-conv-case="5ac" >
+          <input type="text" name="5ac_c" data-conv-question="Please brief your Requirements? ">  
+        </div>
+      </div>
+
+      <div data-conv-fork="3b_services">
+        <div data-conv-case="5ba" >
+          <input type="text" name="5ba_a" data-conv-question="Please brief your Requirements? ">  
+        </div>
+        <div data-conv-case="5bb" >
+          <input type="text" name="5bb_b" data-conv-question="Please brief your Requirements? ">  
+        </div>
+        <div data-conv-case="5bc" >
+          <input type="text" name="5bc_c" data-conv-question="Please brief your Requirements? ">  
+        </div>
+      </div>
+
+      <div data-conv-fork="3d_services">
+        <div data-conv-case="5da" >
+          <input type="text" name="5da_a" data-conv-question="Please brief your Requirements? ">  
+        </div>
+        <div data-conv-case="5db" >
+          <input type="text" name="5db_b" data-conv-question="Please brief your Requirements? ">  
+        </div>
+        <div data-conv-case="5dc" >
+          <input type="text" name="5dc_c" data-conv-question="Please brief your Requirements? ">  
+        </div>
+      </div>
+
+
+      <input type="text" name="name" data-conv-question="Please, Enter your name">
+
+      <input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you." data-no-answer="true">
+
+      <input data-conv-question="Enter your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
+
+      <select data-conv-question="Please Confirm">
+        <option value="Yes"><a href="https://www.google.com/">Confirm</a> </option> 
+        <!-- <a href="www.google.com">Confirm</a> -->
+      </select>
+
+  	</form>
+	</div>
+</div>
+<!-- ChatBot end -->
+
+<script type="text/javascript">
+	portfolioList = document.querySelectorAll('.portfolio-box');
+	portfolioList.forEach(function(portfolioPic) {
+		portfolioPic.addEventListener('click',function(){
+			bg = this.style.backgroundImage;
+			document.getElementById('port_pop_pic_bg').classList.add("active")
+			document.getElementById('port_pop_pic').style.backgroundImage = bg
+			document.getElementById('port_pop_pic').classList.add("active")
+		});	
+	})
+	document.getElementById('port_pop_pic_bg').addEventListener('click',function(){
+			document.getElementById('port_pop_pic_bg').classList.remove("active")
+			document.getElementById('port_pop_pic').classList.remove("active")
+	})
+
+</script>
+</body>
+</html>
